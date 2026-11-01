@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Luca, Computer Science student and Full Stack Developer focused on software architecture and backend systems.">
+    <title>Luca Workspace | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        // The Tailwind Play CDN has no global `colors` object, so the accent palette
+        // is declared explicitly (these are the Tailwind "indigo" values).
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        accent: {
+                            50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
+                            400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca',
+                            800: '#3730a3', 900: '#312e81', 950: '#1e1b4b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'JetBrains Mono', monospace; }
+
+        /* Visible keyboard focus on every link */
+        a:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+    </style>
+
+    <style type="text/tailwindcss">
+        /* Base rule shared by all badges */
+        .badge {
+            @apply px-2 py-1 rounded border text-xs font-bold tracking-wide font-mono inline-block;
+        }
+
+        /* --- PER-LANGUAGE / PER-TECH COLORS --- */
+
+        .badge-php     { @apply bg-indigo-900/50 text-indigo-300 border-indigo-700/50; }
+        .badge-js      { @apply bg-yellow-900/30 text-yellow-200 border-yellow-700/50; }
+        .badge-sql     { @apply bg-sky-900/50 text-sky-300 border-sky-700/50; }
+        .badge-chart   { @apply bg-rose-900/50 text-rose-300 border-rose-700/50; }
+        .badge-db      { @apply bg-emerald-900/50 text-emerald-300 border-emerald-700/50; }
+        .badge-design  { @apply bg-slate-700/50 text-slate-300 border-slate-600/50; }
+        .badge-py      { @apply bg-blue-900/40 text-blue-300 border-blue-700/50; }
+        .badge-cpp     { @apply bg-cyan-900/40 text-cyan-300 border-cyan-700/50; }
+        .badge-java    { @apply bg-orange-900/40 text-orange-300 border-orange-700/50; }
+        .badge-android { @apply bg-lime-900/40 text-lime-300 border-lime-700/50; }
+        .badge-qt      { @apply bg-teal-900/40 text-teal-300 border-teal-700/50; }
+        .badge-node    { @apply bg-green-900/40 text-green-300 border-green-700/50; }
+        .badge-crypto  { @apply bg-red-900/40 text-red-300 border-red-700/50; }
+    </style>
+</head>
+
+<!-- bg color is 'neutral-950' -->
+<body class="bg-neutral-950 text-neutral-200 min-h-screen selection:bg-accent-500 selection:text-white">
+
+    <header class="max-w-4xl mx-auto py-24 px-6">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+
+            <div class="shrink-0">
+                <div class="w-32 h-32 rounded-full border-4 border-accent-500 overflow-hidden shadow-[0_0_20px_rgba(99,102,241,0.3)]">
+                    <img src="https://github.com/luca-workspace.png" alt="Luca" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="text-center md:text-left">
+                <p class="text-accent-400 font-bold mb-2 tracking-wide text-sm">Hi, I am</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Luca.<span class="text-accent-500">_</span></h1>
+                <p class="text-lg text-neutral-400 max-w-xl leading-relaxed">
+                    Computer Science Student & Full Stack Developer.<br>
+                    Focusing on <span class="text-white">Software Architecture</span>, <span class="text-white">Backend Systems</span>, and clean code.
+                </p>
+
+                <!-- Social links -->
+                <div class="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
+                    <a href="https://github.com/luca-workspace" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border border-neutral-700 hover:border-accent-500 hover:text-accent-400 px-4 py-2 rounded transition-colors duration-300">
+                        <!-- GitHub icon -->
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:lucalodola2002@gmx.com" class="flex items-center gap-2 border border-neutral-700 hover:border-white hover:text-white px-4 py-2 rounded transition-colors duration-300">
+                        <span>Email Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROJECTS GRID -->
+    <main class="max-w-6xl mx-auto px-6 pb-24">
+        <div class="flex items-center gap-4 mb-10">
+            <h2 class="text-2xl font-bold text-white">Selected Projects</h2>
+            <div class="h-px bg-neutral-800 flex-grow"></div>
+            <a href="https://github.com/luca-workspace?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-sm text-neutral-500 hover:text-accent-400 transition-colors">All repositories</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- PROJECT 1: GEOMETRIC -->
+            <article class="group flex flex-col bg-neutral-900 border border-neutral-800 hover:border-accent-500 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.15)]">
+                <!-- Placeholder screenshot: replace the <span> with <img src="..." class="w-full h-full object-cover" alt="..."> -->
+                <div class="relative h-48 bg-neutral-800 flex items-center justify-center text-neutral-600 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/luca-workspace/GeoMetric/master/images/screenshot_home.png" alt="QR Toolkit, single QR code generation tab" loading="lazy" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-accent-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="absolute top-3 left-3 px-2 py-1 rounded bg-accent-500 text-white text-xs font-bold">Featured</span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-6">
+                    <h3 class="text-lg font-bold text-white mb-4 group-hover:text-accent-400 transition-colors">GeoMetric</h3>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        Gamified Android quiz app for learning geography through capitals, flags, maps, and monuments. Features XP, daily streaks, and block-based difficulty progression, with a Room database for fully offline use.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="badge badge-java">Java</span>
+                        <span class="badge badge-android">Android</span>
+                        <span class="badge badge-design">XML</span>
+                        <span class="badge badge-db">SQLite</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-neutral-800">
+                        <a href="https://github.com/luca-workspace/GeoMetric" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-neutral-700 text-neutral-300 rounded text-sm hover:border-neutral-500 transition">Source Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 2: EXPENSES MANAGER -->
+            <article class="group flex flex-col bg-neutral-900 border border-neutral-800 hover:border-accent-500 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.15)]">
+                <div class="relative h-48 bg-neutral-800 flex items-center justify-center text-neutral-600 overflow-hidden">
+                    <div class="absolute inset-0 bg-accent-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="font-mono text-sm">[ Screenshot: Expenses Manager ]</span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-6">
+                    <h3 class="text-lg font-bold text-white mb-4 group-hover:text-accent-400 transition-colors">Expenses Manager</h3>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        Full-stack personal finance tracker with secure authentication, expense and revenue management, and interactive Chart.js dashboards. Mobile-first, AJAX-driven UI, documented with a C4 architecture model.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="badge badge-php">PHP</span>
+                        <span class="badge badge-js">JavaScript</span>
+                        <span class="badge badge-sql">SQL</span>
+                        <span class="badge badge-chart">Chart.js</span>
+                        <span class="badge badge-design">Tailwind CSS</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-neutral-800">
+                        <a href="https://github.com/luca-workspace/expenses-manager" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-neutral-700 text-neutral-300 rounded text-sm hover:border-neutral-500 transition">Source Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 3: DETASK -->
+            <article class="group flex flex-col bg-neutral-900 border border-neutral-800 hover:border-accent-500 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.15)]">
+                <div class="relative h-48 bg-neutral-800 flex items-center justify-center text-neutral-600 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/luca-workspace/DeTask/main/images/screenshot.jpg" alt="DeTask screenshot" loading="lazy" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-accent-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                <div class="flex flex-col flex-grow p-6">
+                    <h3 class="text-lg font-bold text-white mb-4 group-hover:text-accent-400 transition-colors">DeTask</h3>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        Desktop task manager for developers that ranks work by cognitive load. An energy slider dims tasks beyond your current mental capacity, alongside drag-and-drop ordering and floating context notes.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="badge badge-cpp">C++</span>
+                        <span class="badge badge-qt">Qt</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-neutral-800">
+                        <a href="https://github.com/luca-workspace/DeTask" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-neutral-700 text-neutral-300 rounded text-sm hover:border-neutral-500 transition">Source Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 4: QR TOOLKIT -->
+            <article class="group flex flex-col bg-neutral-900 border border-neutral-800 hover:border-accent-500 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.15)]">
+                <!-- Screenshot pulled straight from the repository -->
+                <div class="relative h-48 bg-neutral-800 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/luca-workspace/qr-toolkit/main/screenshots/single_tab.png" alt="QR Toolkit, single QR code generation tab" loading="lazy" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-accent-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                <div class="flex flex-col flex-grow p-6">
+                    <h3 class="text-lg font-bold text-white mb-4 group-hover:text-accent-400 transition-colors">QR Toolkit</h3>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        Desktop app for reading and generating QR codes. Decode from images, preview codes live, and bulk-generate from CSV or TXT files with progress tracking and PNG/JPG export.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="badge badge-py">Python</span>
+                        <span class="badge badge-design">CustomTkinter</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-neutral-800">
+                        <a href="https://github.com/luca-workspace/qr-toolkit" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-neutral-700 text-neutral-300 rounded text-sm hover:border-neutral-500 transition">Source Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 5: VACATION RENTAL DB SCHEMA (database focus) -->
+            <article class="group flex flex-col bg-neutral-900 border border-neutral-800 hover:border-accent-500 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.15)]">
+                <!-- ER diagram pulled from the repository; light background keeps the diagram readable -->
+                <div class="relative h-48 bg-neutral-100 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/luca-workspace/vacation-rental-db-schema/main/schema.svg" alt="Entity-relationship diagram of the vacation rental database" loading="lazy" class="w-full h-full object-contain p-3">
+                    <div class="absolute inset-0 bg-accent-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                <div class="flex flex-col flex-grow p-6">
+                    <h3 class="text-lg font-bold text-white mb-4 group-hover:text-accent-400 transition-colors">Vacation Rental DB Schema</h3>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        Normalized relational schema for an Airbnb-style rental platform, covering users, listings, bookings, messaging, coupons, reviews, and payments. Enforces integrity with foreign keys and constraints.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="badge badge-sql">SQL</span>
+                        <span class="badge badge-sql">MySQL</span>
+                        <span class="badge badge-design">ER Modeling</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-neutral-800">
+                        <!-- Backend-only project: no demo button -->
+                        <a href="https://github.com/luca-workspace/vacation-rental-db-schema" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-neutral-700 text-neutral-300 rounded text-sm hover:border-neutral-500 transition">View Schema</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 6: CRYPTOGRAPHY POC -->
+            <article class="group flex flex-col bg-neutral-900 border border-neutral-800 hover:border-accent-500 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.15)]">
+                <div class="relative h-48 bg-neutral-800 flex items-center justify-center text-neutral-600 overflow-hidden">
+                    <div class="absolute inset-0 bg-accent-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="font-mono text-sm">[ Terminal output: Cryptography PoC ]</span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-6">
+                    <h3 class="text-lg font-bold text-white mb-4 group-hover:text-accent-400 transition-colors">Cryptography PoC</h3>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        University proof of concept for privacy-preserving certificate verification. Stores only a salted SHA-256 hash per certificate, and detects a simulated PDF forgery.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="badge badge-js">JavaScript</span>
+                        <span class="badge badge-node">Node.js</span>
+                        <span class="badge badge-crypto">SHA-256</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-neutral-800">
+                        <a href="https://github.com/luca-workspace/Cryptography_PoC" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-neutral-700 text-neutral-300 rounded text-sm hover:border-neutral-500 transition">Source Code</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-10 border-t border-neutral-900">
+        <p class="text-neutral-500 text-xs font-mono">
+            &copy; <span id="year">2026</span> Luca Workspace. <br class="md:hidden"> Built with HTML, Tailwind & Coffee.
+        </p>
+    </footer>
+
+    <script>
+        // Keep the footer year up to date
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
