@@ -45,21 +45,35 @@
             @apply px-2 py-1 rounded border text-xs font-bold tracking-wide font-mono inline-block;
         }
 
-        /* --- PER-LANGUAGE / PER-TECH COLORS --- */
+        .badge-php, .badge-js, .badge-sql, .badge-chart, .badge-db, .badge-design,
+        .badge-py, .badge-c, .badge-cpp, .badge-java, .badge-android, .badge-qt,
+        .badge-node, .badge-crypto, .badge-ctk, .badge-xml, .badge-tailwind, .badge-er {
+            background-color: color-mix(in srgb, var(--c) 18%, transparent);
+            border-color:     color-mix(in srgb, var(--c) 50%, transparent);
+            color:            color-mix(in srgb, var(--c) 60%, white);
+        }
 
-        .badge-php     { @apply bg-indigo-900/50 text-indigo-300 border-indigo-700/50; }
-        .badge-js      { @apply bg-yellow-900/30 text-yellow-200 border-yellow-700/50; }
-        .badge-sql     { @apply bg-sky-900/50 text-sky-300 border-sky-700/50; }
-        .badge-chart   { @apply bg-rose-900/50 text-rose-300 border-rose-700/50; }
-        .badge-db      { @apply bg-emerald-900/50 text-emerald-300 border-emerald-700/50; }
-        .badge-design  { @apply bg-slate-700/50 text-slate-300 border-slate-600/50; }
-        .badge-py      { @apply bg-blue-900/40 text-blue-300 border-blue-700/50; }
-        .badge-cpp     { @apply bg-cyan-900/40 text-cyan-300 border-cyan-700/50; }
-        .badge-java    { @apply bg-orange-900/40 text-orange-300 border-orange-700/50; }
-        .badge-android { @apply bg-lime-900/40 text-lime-300 border-lime-700/50; }
-        .badge-qt      { @apply bg-teal-900/40 text-teal-300 border-teal-700/50; }
-        .badge-node    { @apply bg-green-900/40 text-green-300 border-green-700/50; }
-        .badge-crypto  { @apply bg-red-900/40 text-red-300 border-red-700/50; }
+        /* Official GitHub colors: */
+        .badge-php     { --c: #4F5D95; }  /* PHP */
+        .badge-js      { --c: #f1e05a; }  /* JavaScript */
+        .badge-sql     { --c: #e38c00; }  /* SQL */
+        .badge-py      { --c: #3572A5; }  /* Python */
+        .badge-c       { --c: #555555; }  /* C */
+        .badge-cpp     { --c: #f34b7d; }  /* C++ */
+        .badge-java    { --c: #b07219; }  /* Java */
+        .badge-qt      { --c: #44a51c; }  /* QML (Qt's language) */
+
+        /* Own color choice (not on GitHub): */
+        .badge-android { --c: #3DDC84; }  /* Android green */
+        .badge-node    { --c: #5fa04e; }  /* Node.js green */
+        .badge-chart   { --c: #e11d48; }  /* Chart.js */
+        .badge-db      { --c: #10b981; }  /* Database (other) */
+        .badge-design  { --c: #64748b; }  /* Design-related */
+        .badge-crypto  { --c: #05447d; }  /* Cryptography-related */
+        .badge-ctk     { --c: #7c3aed; }  /* CustomTkinter */
+        .badge-xml     { --c: #f97316; }  /* XML */
+        .badge-tailwind{ --c: #38bdf8; }  /* Tailwind CSS */
+        .badge-er      { --c: #0ea5e9; }  /* ER Modeling */
     </style>
 </head>
 
@@ -80,7 +94,7 @@
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Luca.<span class="text-accent-500">_</span></h1>
                 <p class="text-lg text-neutral-400 max-w-xl leading-relaxed">
                     Computer Science Student & Full Stack Developer.<br>
-                    Focusing on <span class="text-white">Software Architecture</span>, <span class="text-white">Backend Systems</span>, and clean code.
+                    Focusing on <span class="text-white">Software Architecture</span>, <span class="text-white">Backend Systems</span>, and starting with low-level programming, from Linux kernel modules in C to embedded firmware on ESP32.
                 </p>
 
                 <!-- Social links -->
@@ -101,7 +115,7 @@
     <!-- PROJECTS GRID -->
     <main class="max-w-6xl mx-auto px-6 pb-24">
         <div class="flex items-center gap-4 mb-10">
-            <h2 class="text-2xl font-bold text-white">Selected Projects</h2>
+            <h2 class="text-2xl font-bold text-white">Projects</h2>
             <div class="h-px bg-neutral-800 flex-grow"></div>
             <a href="https://github.com/luca-workspace?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-sm text-neutral-500 hover:text-accent-400 transition-colors">All repositories</a>
         </div>
@@ -125,7 +139,7 @@
                     <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
                         <span class="badge badge-java">Java</span>
                         <span class="badge badge-android">Android</span>
-                        <span class="badge badge-design">XML</span>
+                        <span class="badge badge-xml">XML</span>
                         <span class="badge badge-db">SQLite</span>
                     </div>
 
@@ -153,11 +167,35 @@
                         <span class="badge badge-js">JavaScript</span>
                         <span class="badge badge-sql">SQL</span>
                         <span class="badge badge-chart">Chart.js</span>
-                        <span class="badge badge-design">Tailwind CSS</span>
+                        <span class="badge badge-tailwind">Tailwind CSS</span>
                     </div>
 
                     <div class="mt-auto pt-4 border-t border-neutral-800">
                         <a href="https://github.com/luca-workspace/expenses-manager" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-neutral-700 text-neutral-300 rounded text-sm hover:border-neutral-500 transition">Source Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT: LINUX KERNEL CRYPTO MODULE POC -->
+            <article class="group flex flex-col bg-neutral-900 border border-neutral-800 hover:border-accent-500 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.15)]">
+                <div class="relative h-48 bg-neutral-800 flex items-center justify-center text-neutral-600 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/luca-workspace/Linux-Kernel-Crypto-Module-Poc/main/imgs/screenshot.jpg" alt="Linux Kernel Crypto Module PoC screenshot" loading="lazy" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-accent-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                <div class="flex flex-col flex-grow p-6">
+                    <h3 class="text-lg font-bold text-white mb-4 group-hover:text-accent-400 transition-colors">Linux Kernel Crypto Module</h3>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        A custom Linux kernel module written in C, implementing a character device (<code class="text-neutral-300">/dev/crypto_hw</code>) that performs XOR encryption on data passed from user space via the kernel crypto API.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+                        <span class="badge badge-c">C</span>
+                        <span class="badge badge-crypto">Linux Kernel</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-neutral-800">
+                        <a href="https://github.com/luca-workspace/Linux-Kernel-Crypto-Module-Poc" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 border border-neutral-700 text-neutral-300 rounded text-sm hover:border-neutral-500 transition">Source Code</a>
                     </div>
                 </div>
             </article>
@@ -202,7 +240,7 @@
 
                     <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
                         <span class="badge badge-py">Python</span>
-                        <span class="badge badge-design">CustomTkinter</span>
+                        <span class="badge badge-ctk">CustomTkinter</span>
                     </div>
 
                     <div class="mt-auto pt-4 border-t border-neutral-800">
@@ -228,7 +266,7 @@
                     <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
                         <span class="badge badge-sql">SQL</span>
                         <span class="badge badge-sql">MySQL</span>
-                        <span class="badge badge-design">ER Modeling</span>
+                        <span class="badge badge-er">ER Modeling</span>
                     </div>
 
                     <div class="mt-auto pt-4 border-t border-neutral-800">
@@ -269,7 +307,7 @@
     <!-- FOOTER -->
     <footer class="text-center py-10 border-t border-neutral-900">
         <p class="text-neutral-500 text-xs font-mono">
-            &copy; <span id="year">2026</span> Luca Workspace. <br class="md:hidden"> Built with HTML, Tailwind & Coffee.
+            &copy; <span id="year">2026</span> Luca Workspace.
         </p>
     </footer>
 
